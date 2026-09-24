@@ -12,7 +12,7 @@ tags:
 
 items:
   - year: 2026
-    title: "[Sample] Inferring single-cell transcriptomic dynamics from snapshot data: a review"
+    title: "[Sample] "
     authors: "**[Author A]**, [Author B], **[PI]***"
     journal: "[Journal]"
     doi: ""
@@ -20,28 +20,28 @@ items:
     sample: true
 
   - year: 2026
-    title: "[Sample] A genetically encoded recorder of transcriptional history in single cells"
+    title: "[Sample] "
     authors: "**[Author C]**#, **[Author D]**#, **[PI]***"
     journal: "[Journal]"
     tags: [synbio, method, sc]
     sample: true
 
   - year: 2025
-    title: "[Sample] Metabolic RNA labeling resolves the timing of fate commitment"
+    title: "[Sample] "
     authors: "**[Author E]**, [Collaborator], **[PI]***"
     journal: "[Journal]"
     tags: [sc, method]
     sample: true
 
   - year: 2025
-    title: "[Sample] Modular gene circuits for time-resolved cellular recording"
+    title: "[Sample] "
     authors: "**[Author F]**, **[PI]***"
     journal: "[Journal]"
     tags: [synbio]
     sample: true
 
   - year: 2024
-    title: "[Sample] Kinetic modeling of transcriptional bursts across differentiation"
+    title: "[Sample] "
     authors: "[Collaborator], **[Author G]**, **[PI]***"
     journal: "[Journal]"
     tags: [method, sc]
