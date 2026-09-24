@@ -1,0 +1,48 @@
+# 论文发表
+# authors 中用 **粗体** 标出本组成员，* 表示通讯作者，# 表示共同一作。
+# tags 取自下方 tags 列表的 id，用于页面上的筛选按钮。
+# sample: true 会显示“示例”标记，换成真实论文后删掉这一行。
+# 链接（doi / pdf / code）都可以省略。
+
+tags:
+  - { id: method, label: { zh: 方法开发, en: Methods } }
+  - { id: synbio, label: { zh: 合成生物学, en: Synthetic biology } }
+  - { id: sc, label: { zh: 单细胞, en: Single-cell } }
+  - { id: review, label: { zh: 综述, en: Review } }
+
+items:
+  - year: 2026
+    title: "[Sample] Inferring single-cell transcriptomic dynamics from snapshot data: a review"
+    authors: "**[Author A]**, [Author B], **[PI]***"
+    journal: "[Journal]"
+    doi: ""
+    tags: [review, sc]
+    sample: true
+
+  - year: 2026
+    title: "[Sample] A genetically encoded recorder of transcriptional history in single cells"
+    authors: "**[Author C]**#, **[Author D]**#, **[PI]***"
+    journal: "[Journal]"
+    tags: [synbio, method, sc]
+    sample: true
+
+  - year: 2025
+    title: "[Sample] Metabolic RNA labeling resolves the timing of fate commitment"
+    authors: "**[Author E]**, [Collaborator], **[PI]***"
+    journal: "[Journal]"
+    tags: [sc, method]
+    sample: true
+
+  - year: 2025
+    title: "[Sample] Modular gene circuits for time-resolved cellular recording"
+    authors: "**[Author F]**, **[PI]***"
+    journal: "[Journal]"
+    tags: [synbio]
+    sample: true
+
+  - year: 2024
+    title: "[Sample] Kinetic modeling of transcriptional bursts across differentiation"
+    authors: "[Collaborator], **[Author G]**, **[PI]***"
+    journal: "[Journal]"
+    tags: [method, sc]
+    sample: true

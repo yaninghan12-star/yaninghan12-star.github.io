@@ -1,0 +1,40 @@
+{{- $lang := site.Language.Lang -}}
+{{- $m := hugo.Data.members -}}
+<section id="people">
+  <div class="wrap">
+    <div class="sec-head"><h2>{{ i18n "people" }}</h2><span class="en-sub">Members</span></div>
+    {{- with $m.pi }}
+    {{- $name := partial "tr.html" (dict "v" .name "lang" $lang) }}
+    <div class="pi">
+      {{ partial "avatar.html" (dict "photo" .photo "alt" $name "fallback" "PI") }}
+      <div>
+        <span class="role">{{ partial "tr.html" (dict "v" .title "lang" $lang) }}</span>
+        <h3 style="font-size:24px;margin-top:4px">{{ $name }}</h3>
+        <p>{{ partial "tr.html" (dict "v" .bio "lang" $lang) }}</p>
+        <dl>
+          {{ with .email }}<dt>EMAIL</dt><dd>{{ . }}</dd>{{ end }}
+          {{ with .office }}<dt>{{ i18n "office" }}</dt><dd>{{ partial "tr.html" (dict "v" . "lang" $lang) }}</dd>{{ end }}
+        </dl>
+        {{- with .links }}
+        <div class="links">{{ range . }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} ↗</a>{{ end }}</div>
+        {{- end }}
+      </div>
+    </div>
+    {{- end }}
+    {{- range $g := $m.groups }}
+      {{- $list := where $m.members "group" $g.id -}}
+      {{- if $list }}
+      <p class="group-label">{{ partial "tr.html" (dict "v" $g.title "lang" $lang) }}</p>
+      <div class="people">
+        {{- range $list }}
+        {{- $n := partial "tr.html" (dict "v" .name "lang" $lang) }}
+        <div class="person">
+          {{ partial "avatar.html" (dict "photo" .photo "alt" $n "fallback" (i18n "photo")) }}
+          <div><b>{{ $n }}</b><span>{{ partial "tr.html" (dict "v" .role "lang" $lang) }}</span>{{ with .focus }}<span>{{ partial "tr.html" (dict "v" . "lang" $lang) }}</span>{{ end }}</div>
+        </div>
+        {{- end }}
+      </div>
+      {{- end }}
+    {{- end }}
+  </div>
+</section>

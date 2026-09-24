@@ -1,0 +1,36 @@
+# 课题组基本信息。{zh: ..., en: ...} 表示中英两版；只写一种时两种语言都显示同一内容。
+
+name:
+  zh: 单细胞时序实验室
+  en: Temporal Cell Lab
+
+eyebrow: "Single-cell · Time · Synthetic Biology"
+
+headline:
+  zh: 让每一个细胞<br>记住自己的过去
+  en: Teaching every cell to remember its own past
+
+intro:
+  zh: 我们结合合成生物学与单细胞测序，开发记录和推断细胞转录组时间动态的新方法，研究细胞如何随时间做出命运决定。
+  en: We combine synthetic biology with single-cell sequencing to build tools that record and infer transcriptomic dynamics over time, and use them to ask how cells make fate decisions.
+
+affiliation:
+  zh: ["[所属学院 / 研究所]", "[重点实验室名称]"]
+  en: ["[Department / Institute]", "[State Key Laboratory name]"]
+
+email: "[pi@example.edu.cn]"
+
+address:
+  zh: "[地址]"
+  en: "[Address]"
+
+# 首页显示哪些模块、按什么顺序。每一项对应 layouts/_partials/sections/<名字>.html
+# 新增模块：写好模板后把名字加到这里；想暂时隐藏某个模块，删掉或注释掉即可。
+sections:
+  - research
+  - people
+  - publications
+  - news_join
+
+# 内容全部替换为真实信息后改成 false，页脚的“占位内容”提示就会消失
+placeholder_notice: true

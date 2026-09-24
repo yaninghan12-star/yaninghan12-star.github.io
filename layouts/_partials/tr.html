@@ -1,0 +1,7 @@
+{{- /* 取中英文：传入 {zh: .., en: ..} 返回当前语言的值；传入普通字符串原样返回 */ -}}
+{{- $v := .v -}}
+{{- $r := $v -}}
+{{- if reflect.IsMap $v -}}
+  {{- $r = index $v .lang | default (index $v "zh") | default (index $v "en") -}}
+{{- end -}}
+{{- return $r -}}

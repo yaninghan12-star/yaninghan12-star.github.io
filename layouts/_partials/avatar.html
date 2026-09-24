@@ -1,0 +1,6 @@
+{{- /* 成员头像：有照片显示照片，否则显示占位 */ -}}
+{{- if .photo -}}
+<img class="avatar" src="{{ printf "images/people/%s" .photo | relURL }}" alt="{{ .alt }}" loading="lazy">
+{{- else -}}
+<div class="avatar" aria-hidden="true">{{ .fallback }}</div>
+{{- end -}}

@@ -1,0 +1,29 @@
+{{- $lang := site.Language.Lang -}}
+{{- $s := hugo.Data.site -}}
+{{- $name := partial "tr.html" (dict "v" $s.name "lang" $lang) -}}
+<!DOCTYPE html>
+<html lang="{{ $lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ if .IsHome }}{{ $name }}{{ else }}{{ .Title | plainify }} · {{ $name }}{{ end }}</title>
+<meta name="description" content="{{ partial "tr.html" (dict "v" $s.intro "lang" $lang) | plainify }}">
+{{- range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+{{- end }}
+{{- if site.Params.googleFonts }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap">
+{{- end }}
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+</head>
+<body>
+{{ partial "header.html" . }}
+<main id="top">
+{{ block "main" . }}{{ end }}
+</main>
+{{ partial "footer.html" . }}
+<script src="{{ "js/site.js" | relURL }}" defer></script>
+</body>
+</html>

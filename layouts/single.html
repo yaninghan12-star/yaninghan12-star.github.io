@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div class="wrap">
+  <article class="article">
+    <a class="back" href="{{ site.Home.RelPermalink }}#news_join">{{ i18n "backHome" }}</a>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+    <h1>{{ .Title | markdownify }}</h1>
+    <div class="prose">{{ .Content }}</div>
+  </article>
+</div>
+{{ end }}

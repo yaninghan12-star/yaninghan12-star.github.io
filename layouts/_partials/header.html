@@ -1,0 +1,26 @@
+{{- $lang := site.Language.Lang -}}
+{{- $home := site.Home.RelPermalink -}}
+{{- $page := . -}}
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="{{ $home }}">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="4" cy="17" r="2.2" fill="var(--t0)"/><circle cx="9" cy="11" r="2.4" fill="color-mix(in srgb,var(--t0),var(--t1))"/><circle cx="16" cy="6" r="2.8" fill="var(--t1)"/><path d="M4 17 Q7 13 9 11 T16 6" stroke="var(--muted)" stroke-width="1" fill="none" stroke-dasharray="2 2"/></svg>
+      {{ partial "tr.html" (dict "v" hugo.Data.site.name "lang" $lang) }}
+    </a>
+    <ul>
+      {{- range hugo.Data.site.sections }}
+      {{- if templates.Exists (printf "_partials/sections/%s.html" .) }}
+      <li><a href="{{ $home }}#{{ . }}">{{ i18n . | default . }}</a></li>
+      {{- end }}
+      {{- end }}
+    </ul>
+    <nav class="lang" aria-label="Language">
+      {{- range site.Home.AllTranslations }}
+        {{- $l := .Language.Lang -}}
+        {{- $target := . -}}
+        {{- range $page.AllTranslations }}{{ if eq .Language.Lang $l }}{{ $target = . }}{{ end }}{{ end }}
+        <a href="{{ $target.RelPermalink }}" hreflang="{{ $l }}" aria-current="{{ eq $l $lang }}">{{ .Language.Label }}</a>
+      {{- end }}
+    </nav>
+  </div>
+</header>

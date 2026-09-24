@@ -1,0 +1,42 @@
+{{- $lang := site.Language.Lang -}}
+{{- $d := hugo.Data.publications -}}
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head"><h2>{{ i18n "publications" }}</h2><span class="en-sub">{{ i18n "authorLegend" }}</span></div>
+    <div class="pub-tools">
+      <button class="chip" type="button" data-tag="all" aria-pressed="true">{{ i18n "all" }}</button>
+      {{- range $d.tags }}
+      <button class="chip" type="button" data-tag="{{ .id }}" aria-pressed="false">{{ partial "tr.html" (dict "v" .label "lang" $lang) }}</button>
+      {{- end }}
+      <input id="pub-search" class="search" type="search" placeholder="{{ i18n "search" }}" aria-label="{{ i18n "search" }}">
+    </div>
+    <div id="pub-list">
+      {{- $years := slice -}}
+      {{- range $d.items }}{{ $years = $years | append .year }}{{ end -}}
+      {{- $tagLabels := dict -}}
+      {{- range $d.tags }}{{ $tagLabels = merge $tagLabels (dict .id (partial "tr.html" (dict "v" .label "lang" $lang))) }}{{ end -}}
+      {{- range $y := sort (uniq $years) "value" "desc" }}
+      <div class="year">
+        <h3>{{ $y }}</h3>
+        <ul class="pubs">
+          {{- range where $d.items "year" $y }}
+          <li class="pub" data-tags="{{ delimit (.tags | default slice) " " }}">
+            <div class="t">{{ with .doi }}<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener" style="color:inherit">{{ end }}{{ .title | markdownify }}{{ with .doi }}</a>{{ end }}</div>
+            <div class="a">{{ .authors | markdownify }}</div>
+            <div class="j">
+              <em>{{ .journal }}</em>
+              {{- range .tags }}<span class="badge">{{ index $tagLabels . | default . }}</span>{{ end }}
+              {{- with .doi }}<a href="https://doi.org/{{ . }}" target="_blank" rel="noopener">DOI</a>{{ end }}
+              {{- with .pdf }}<a href="{{ . | relURL }}" target="_blank" rel="noopener">PDF</a>{{ end }}
+              {{- with .code }}<a href="{{ . }}" target="_blank" rel="noopener">Code</a>{{ end }}
+              {{- if .sample }}<span class="badge sample">{{ i18n "sample" }}</span>{{ end }}
+            </div>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+      {{- end }}
+    </div>
+    <p class="empty" id="pub-empty" hidden>{{ i18n "noMatch" }}</p>
+  </div>
+</section>

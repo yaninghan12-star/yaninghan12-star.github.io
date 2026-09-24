@@ -1,0 +1,36 @@
+# 研究方向。按列表顺序显示，建议 3 个左右。
+# code: 显示在标题上方的短标签（英文大写）；keywords: 底部的小标签
+
+- code: RECORD
+  title:
+    zh: 细胞内的分子记录器
+    en: Molecular recorders in living cells
+  summary:
+    zh: "[示例] 设计基因线路，在细胞内写入可被测序读取的时间信息，让单次测量也能反映细胞的历史状态。"
+    en: "[Sample] Engineering genetic circuits that write time-stamped information into cells, readable by sequencing, so one snapshot also reveals a cell's history."
+  keywords:
+    - { zh: 基因线路, en: Gene circuits }
+    - { zh: RNA 标记, en: RNA labeling }
+
+- code: INFER
+  title:
+    zh: 从快照推断动态
+    en: Inferring dynamics from snapshots
+  summary:
+    zh: "[示例] 发展计算方法，从单细胞快照数据中重建转录组随时间变化的轨迹与速度。"
+    en: "[Sample] Developing computational methods that reconstruct trajectories and rates of transcriptomic change from single-cell snapshot data."
+  keywords:
+    - RNA velocity
+    - { zh: 轨迹推断, en: Trajectory inference }
+    - { zh: 动力学模型, en: Kinetic models }
+
+- code: DECIDE
+  title:
+    zh: 细胞命运决定
+    en: Cell fate decisions
+  summary:
+    zh: "[示例] 利用上述工具，研究干细胞分化与应激响应中细胞何时、如何走向不同命运。"
+    en: "[Sample] Applying these tools to ask when and how cells commit to different fates during differentiation and stress responses."
+  keywords:
+    - { zh: 干细胞分化, en: Differentiation }
+    - { zh: 谱系示踪, en: Lineage tracing }

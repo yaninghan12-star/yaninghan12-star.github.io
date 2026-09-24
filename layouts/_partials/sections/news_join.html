@@ -1,0 +1,29 @@
+{{- $lang := site.Language.Lang -}}
+{{- $j := hugo.Data.join -}}
+{{- $news := where site.RegularPages "Section" "news" -}}
+<section id="news_join">
+  <div class="wrap two">
+    <div>
+      <div class="sec-head"><h2>{{ i18n "news" }}</h2></div>
+      <ul class="news">
+        {{- range first 5 $news.ByDate.Reverse }}
+        <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01" }}</time>
+          <span>{{ if .Content }}<a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ else }}{{ .Title | markdownify }}{{ end }}</span></li>
+        {{- end }}
+      </ul>
+      {{- if gt (len $news) 5 }}
+      {{ with site.GetPage "/news" }}<a class="more" href="{{ .RelPermalink }}">{{ i18n "allNews" }}</a>{{ end }}
+      {{- end }}
+    </div>
+    <div class="join">
+      <h3>{{ i18n "join" }}</h3>
+      <p>{{ partial "tr.html" (dict "v" $j.intro "lang" $lang) }}</p>
+      <ul>{{ range $j.positions }}<li>{{ partial "tr.html" (dict "v" . "lang" $lang) }}</li>{{ end }}</ul>
+      <p>{{ partial "tr.html" (dict "v" $j.apply "lang" $lang) }}</p>
+      <div class="contact">
+        <code id="email">{{ hugo.Data.site.email }}</code>
+        <button class="btn" type="button" data-copy="email" data-copied="{{ i18n "copied" }}">{{ i18n "copy" }}</button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,8 @@
+{{- $lang := site.Language.Lang -}}
+{{- $s := hugo.Data.site -}}
+<footer>
+  <div class="wrap">
+    <span>© {{ now.Year }} {{ partial "tr.html" (dict "v" $s.name "lang" $lang) }} · {{ partial "tr.html" (dict "v" $s.address "lang" $lang) }}</span>
+    {{- if $s.placeholder_notice }}<span class="note">{{ i18n "placeholder" }}</span>{{ end }}
+  </div>
+</footer>

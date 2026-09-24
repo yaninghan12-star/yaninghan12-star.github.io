@@ -1,0 +1,14 @@
+# “加入我们”板块
+intro:
+  zh: 我们长期欢迎对单细胞、合成生物学和计算生物学感兴趣的同学与研究者。
+  en: We welcome students and researchers excited about single-cell biology, synthetic biology and computation.
+
+positions:
+  - { zh: 博士后（生物实验 / 计算方向）, en: Postdocs (wet lab or computational) }
+  - { zh: 博士、硕士研究生, en: "PhD and Master's students" }
+  - { zh: 科研助理、本科实习生, en: Research assistants and undergraduate interns }
+
+apply:
+  zh: 请将简历和研究兴趣简述发送至：
+  en: "Send your CV and a short research statement to:"
+# 联系邮箱使用 site.yaml 里的 email

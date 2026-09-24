@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="wrap news-page">
+  <a class="back" href="{{ site.Home.RelPermalink }}">{{ i18n "backHome" }}</a>
+  <h1>{{ .Title }}</h1>
+  <ul class="news">
+    {{- range .Pages.ByDate.Reverse }}
+    <li><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01" }}</time>
+      <span>{{ if .Content }}<a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>{{ else }}{{ .Title | markdownify }}{{ end }}</span></li>
+    {{- end }}
+  </ul>
+</div>
+{{ end }}

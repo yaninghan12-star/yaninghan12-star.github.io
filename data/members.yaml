@@ -1,0 +1,74 @@
+# 团队成员
+# 照片放在 static/images/people/ 下，photo 填文件名（建议正方形、宽 400px 左右）；没有照片就留空。
+
+pi:
+  name: { zh: "[PI 姓名]", en: "[PI Name]" }
+  title: { zh: 课题组负责人 · 研究员, en: Principal Investigator · Professor }
+  bio:
+    zh: "[示例简介] 博士毕业于 [院校]，曾在 [机构] 从事博士后研究，研究兴趣包括合成生物学、单细胞基因组学与细胞动态。"
+    en: "[Sample bio] PhD from [University], postdoctoral training at [Institute]. Interests span synthetic biology, single-cell genomics and cellular dynamics."
+  email: "[pi@example.edu.cn]"
+  office: { zh: "[楼号 / 房间]", en: "[Building / Room]" }
+  photo: ""
+  links: []
+  #  - { label: Google Scholar, url: "https://scholar.google.com/..." }
+  #  - { label: ORCID, url: "https://orcid.org/..." }
+
+# 分组及显示顺序。成员毕业时，只需把他的 group 改成 alumni。
+groups:
+  - id: staff
+    title: { zh: 博士后与研究人员, en: Postdocs & Staff }
+  - id: students
+    title: { zh: 研究生, en: Graduate Students }
+  - id: alumni
+    title: { zh: 已毕业成员, en: Alumni }
+
+# 成员列表。同一组内按这里的先后顺序显示。
+members:
+  - name: { zh: "[姓名]", en: "[Name]" }
+    group: staff
+    role: { zh: 博士后, en: Postdoc }
+    focus: { zh: 单细胞计算方法, en: Single-cell computation }
+    photo: ""
+
+  - name: { zh: "[姓名]", en: "[Name]" }
+    group: staff
+    role: { zh: 助理研究员, en: Research Scientist }
+    focus: { zh: 基因线路设计, en: Gene circuit design }
+    photo: ""
+
+  - name: { zh: "[姓名]", en: "[Name]" }
+    group: staff
+    role: { zh: 实验室主管, en: Lab Manager }
+    focus: { zh: 平台与测序, en: Platform & sequencing }
+    photo: ""
+
+  - name: { zh: "[姓名]", en: "[Name]" }
+    group: students
+    role: { zh: 博士生 · 2023 级, en: PhD student · 2023 }
+    focus: { zh: 转录组时间动态, en: Temporal transcriptomics }
+    photo: ""
+
+  - name: { zh: "[姓名]", en: "[Name]" }
+    group: students
+    role: { zh: 博士生 · 2024 级, en: PhD student · 2024 }
+    focus: { zh: 分子记录器, en: Molecular recording }
+    photo: ""
+
+  - name: { zh: "[姓名]", en: "[Name]" }
+    group: students
+    role: { zh: 硕士生 · 2024 级, en: MS student · 2024 }
+    focus: { zh: 轨迹推断, en: Trajectory inference }
+    photo: ""
+
+  - name: { zh: "[姓名]", en: "[Name]" }
+    group: students
+    role: { zh: 硕士生 · 2025 级, en: MS student · 2025 }
+    focus: { zh: 干细胞分化, en: Stem cell differentiation }
+    photo: ""
+
+  - name: { zh: "[姓名]", en: "[Name]" }
+    group: alumni
+    role: { zh: 硕士 · 2025 届, en: MS · 2025 }
+    focus: { zh: "现就职于 [去向]", en: "Now at [Destination]" }
+    photo: ""

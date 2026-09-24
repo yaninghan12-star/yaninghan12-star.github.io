@@ -1,0 +1,26 @@
+# 网站全局配置。一般只需要改 baseURL（GitHub Actions 部署时会自动覆盖）
+baseURL = "https://example.github.io/"
+title = "Temporal Cell Lab"
+defaultContentLanguage = "zh"
+defaultContentLanguageInSubdir = false
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+[languages.zh]
+  weight = 1
+  label = "中"
+  locale = "zh-CN"
+  title = "单细胞时序实验室"
+
+[languages.en]
+  weight = 2
+  label = "EN"
+  locale = "en"
+  title = "Temporal Cell Lab"
+
+[params]
+  # 国内访问 Google Fonts 不稳定；设为 false 则只用系统字体
+  googleFonts = true
+
+[markup.goldmark.renderer]
+  unsafe = true

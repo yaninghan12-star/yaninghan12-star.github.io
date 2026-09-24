@@ -1,0 +1,18 @@
+{{- $lang := site.Language.Lang -}}
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head"><h2>{{ i18n "research" }}</h2><span class="en-sub">Research directions</span></div>
+    <div class="research">
+      {{- range hugo.Data.research }}
+      <article>
+        <span class="tag">{{ .code }}</span>
+        <h3>{{ partial "tr.html" (dict "v" .title "lang" $lang) }}</h3>
+        <p>{{ partial "tr.html" (dict "v" .summary "lang" $lang) }}</p>
+        {{- with .keywords }}
+        <ul>{{ range . }}<li>{{ partial "tr.html" (dict "v" . "lang" $lang) }}</li>{{ end }}</ul>
+        {{- end }}
+      </article>
+      {{- end }}
+    </div>
+  </div>
+</section>

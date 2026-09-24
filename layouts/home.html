@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{- $lang := site.Language.Lang -}}
+{{- $s := hugo.Data.site -}}
+<div class="wrap hero">
+  <div>
+    <p class="eyebrow">{{ partial "tr.html" (dict "v" $s.eyebrow "lang" $lang) }}</p>
+    <h1>{{ partial "tr.html" (dict "v" $s.headline "lang" $lang) | safeHTML }}</h1>
+    <p class="lede">{{ partial "tr.html" (dict "v" $s.intro "lang" $lang) }}</p>
+    <div class="affil">{{ delimit (partial "tr.html" (dict "v" $s.affiliation "lang" $lang)) "<br>" | safeHTML }}</div>
+  </div>
+  <figure class="figure" style="margin:0">
+    <canvas id="traj" aria-label="{{ i18n "figcap" }}"></canvas>
+    <figcaption class="figcap"><span>{{ i18n "figcap" }}</span><span class="ramp">0 h <i></i> 72 h</span></figcaption>
+  </figure>
+</div>
+{{- range $s.sections }}
+  {{- $tpl := printf "sections/%s.html" . -}}
+  {{- if templates.Exists (printf "_partials/%s" $tpl) }}
+    {{- partial $tpl $ }}
+  {{- else }}
+    {{- warnf "site.yaml 中的模块 %q 没有对应模板 layouts/_partials/%s" . $tpl }}
+  {{- end }}
+{{- end }}
+{{ end }}
